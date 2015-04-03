@@ -1,0 +1,11 @@
+set nocursorline " don't highlight current line
+
+" keyboard shortcuts
+inoremap jj <ESC>
+
+" rspec command shortcut
+nnoremap <leader>k :call RunCurrentSpecFile()<CR>
+nnoremap <leader>o :call RunAllSpecs()<CR>
+
+set wildmenu
+set wildmode=longest:full,full
