@@ -3,9 +3,14 @@ set nocursorline " don't highlight current line
 " keyboard shortcuts
 inoremap jj <ESC>
 
+" let g:rspec_runner = "ox_x_iterm2"
+" let g:rspec_command = "Dispatch rspec {spec}"
+
 " rspec command shortcut
 nnoremap <leader>k :call RunCurrentSpecFile()<CR>
 nnoremap <leader>o :call RunAllSpecs()<CR>
 
 set wildmenu
 set wildmode=longest:full,full
+
+set exrc
