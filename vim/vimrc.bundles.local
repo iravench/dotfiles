@@ -1,1 +1,3 @@
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'tomasr/molokai'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'

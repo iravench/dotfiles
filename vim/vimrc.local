@@ -1,16 +1,12 @@
-set nocursorline " don't highlight current line
+" faster esc
+inoremap kk <ESC>
 
-" keyboard shortcuts
-inoremap jj <ESC>
-
-" let g:rspec_runner = "ox_x_iterm2"
-" let g:rspec_command = "Dispatch rspec {spec}"
+" don't highlight current line
+set nocursorline
 
 " rspec command shortcut
 nnoremap <leader>k :call RunCurrentSpecFile()<CR>
 nnoremap <leader>o :call RunAllSpecs()<CR>
 
-set wildmenu
-set wildmode=longest:full,full
-
-set exrc
+" respect local .vimrc config
+" set exrc

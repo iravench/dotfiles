@@ -3,10 +3,9 @@
 " Maximum Awesome.
 " Please create ~/.vimrc.bundles.local and add any extra bundles you want there
 Bundle 'airblade/vim-gitgutter'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'austintaylor/vim-indentobject'
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
