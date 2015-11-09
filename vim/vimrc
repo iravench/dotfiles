@@ -37,6 +37,7 @@ set list                                                     " show trailing whi
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
 set ruler                                                    " show where you are
+set cursorline                                               " highlight cursor line
 set scrolloff=3                                              " show context above/below cursorline
 set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
 set showcmd
@@ -100,8 +101,10 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
-let g:gitgutter_enabled = 0
+let g:NERDSpaceDelims = 1
+let g:gitgutter_enabled = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -126,8 +129,6 @@ autocmd User Rails silent! Rnavcommand mediator       app/mediators             
 autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-" automatically toggle git gutter when entering vim
-autocmd VimEnter * :GitGutterToggle
 
 " Fix Cursor in TMUX
 if exists('$TMUX')

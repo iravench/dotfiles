@@ -1,12 +1,8 @@
 " faster esc
 inoremap kk <ESC>
 
-" don't highlight current line
-set nocursorline
-
 " rspec command shortcut
-nnoremap <leader>k :call RunCurrentSpecFile()<CR>
-nnoremap <leader>o :call RunAllSpecs()<CR>
-
+" nnoremap <leader>k :call RunCurrentSpecFile()<CR>
+" nnoremap <leader>o :call RunAllSpecs()<CR>
 " respect local .vimrc config
 " set exrc
