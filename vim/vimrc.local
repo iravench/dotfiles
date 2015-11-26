@@ -1,8 +1,9 @@
-" faster esc
-inoremap kk <ESC>
+" exec current line as shell command then replace it with the output
+noremap Q !!$SHELL<CR>
 
 " rspec command shortcut
-" nnoremap <leader>k :call RunCurrentSpecFile()<CR>
-" nnoremap <leader>o :call RunAllSpecs()<CR>
+nnoremap <leader>k :call RunCurrentSpecFile()<CR>
+nnoremap <leader>o :call RunAllSpecs()<CR>
+
 " respect local .vimrc config
 " set exrc
