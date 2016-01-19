@@ -116,19 +116,47 @@ if executable('ag')
 endif
 
 " fdoc is yaml
-autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+augroup filetype_yaml
+  autocmd!
+  autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
+augroup END
+
 " md is markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.md set spell
+augroup filetype_markdown
+  autocmd!
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.md set spell
+augroup END
+
 " extra rails.vim help
-autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
-autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
-autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
-autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
-autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
-autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
+augroup filetype_ruby
+  autocmd!
+  autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
+  autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
+  autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
+  autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
+  autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
+  autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
+augroup END
+
 " automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+augroup utils
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup END
+
+function! s:MkNonExDir(file, buf)
+  if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+    let dir=fnamemodify(a:file, ':h')
+    if !isdirectory(dir)
+      call mkdir(dir, 'p')
+    endif
+  endif
+endfunction
+augroup BWCCreateDir
+  autocmd!
+  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
