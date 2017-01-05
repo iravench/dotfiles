@@ -36,6 +36,7 @@ knownkeys = {
   {'w', 'iawriter'},
   {'x', 'xcode'},
   {'a', 'spotlight'},
+  {'m', 'vox'},
   {'[', 'window management left'},
   {']', 'window management right'},
   {'\\', 'window management center'},
