@@ -7,3 +7,6 @@ nnoremap <leader>o :call RunAllSpecs()<CR>
 
 " respect local .vimrc config
 " set exrc
+
+" set gui font for MacVim
+set gfn=Monaco:h13
