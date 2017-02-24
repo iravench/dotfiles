@@ -1,9 +1,14 @@
 " exec current line as shell command then replace it with the output
 noremap Q !!$SHELL<CR>
 
+" format current buffer as JSON
+nnoremap <leader>j :%!python -m json.tool<CR>
+
+" format current buffer as XML
+nnoremap <leader>x :%!tidy -xml -i -q<CR>
+
 " rspec command shortcut
 nnoremap <leader>k :call RunCurrentSpecFile()<CR>
-nnoremap <leader>o :call RunAllSpecs()<CR>
 
 " respect local .vimrc config
 " set exrc
