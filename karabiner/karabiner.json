@@ -1,4 +1,9 @@
 {
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true,
+        "show_profile_name_in_menu_bar": false
+    },
     "profiles": [
         {
             "devices": [
@@ -10,8 +15,17 @@
                         "product_id": 628,
                         "vendor_id": 1452
                     },
-                    "ignore": false,
-                    "keyboard_type": 0
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 283,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false
                 }
             ],
             "fn_function_keys": {
@@ -33,6 +47,10 @@
             "simple_modifications": {
                 "caps_lock": "f18",
                 "right_command": "right_control"
+            },
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi"
             }
         }
     ]
