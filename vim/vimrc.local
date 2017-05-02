@@ -8,7 +8,9 @@ nnoremap <leader>j :%!python -m json.tool<CR>
 nnoremap <leader>x :%!tidy -xml -i -q<CR>
 
 " rspec command shortcut
-nnoremap <leader>k :call RunCurrentSpecFile()<CR>
+let g:rspec_command = "!rspec --no-drb --color --format documentation {spec}"
+"nnoremap <leader>s :call RunCurrentSpecFile()<CR>
+nnoremap <leader>s :call RunNearestSpec()<CR>
 
 " respect local .vimrc config
 " set exrc
