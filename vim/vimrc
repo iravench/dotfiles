@@ -113,7 +113,17 @@ nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>:nohlsearch<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <leader>sv :vsplit<CR>
+nnoremap <leader>sh :split<CR>
+nnoremap <leader>vp :VimuxPromptCommand<CR>
+nnoremap <leader>vl :VimuxRunLastCommand<CR>
+" exec current line as shell command then replace it with the output
+nnoremap <leader>cr !!$SHELL<CR>
+" format current buffer as JSON
+nnoremap <leader>fj :%!python -m json.tool<CR>
+" format current buffer as XML
+nnoremap <leader>fx :%!tidy -xml -i -q<CR>
+noremap <silent> <leader>r :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
