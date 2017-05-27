@@ -117,6 +117,9 @@ nnoremap <leader>sv :vsplit<CR>
 nnoremap <leader>sh :split<CR>
 nnoremap <leader>vp :VimuxPromptCommand<CR>
 nnoremap <leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vz :VimuxZoomRunner<CR>
+"nnoremap <leader>vp :call VimuxPromptCommand("run test")<CR>
 " exec current line as shell command then replace it with the output
 nnoremap <leader>cr !!$SHELL<CR>
 " format current buffer as JSON
