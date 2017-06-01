@@ -1,7 +1,8 @@
 " rspec command shortcut
 let g:rspec_command = "!rspec --no-drb --color --format documentation {spec}"
 "nnoremap <leader>s :call RunCurrentSpecFile()<CR>
-nnoremap <leader>s :call RunNearestSpec()<CR>
+nnoremap <leader>ts :call RunNearestSpec()<CR>
+
 
 " respect local .vimrc config
 " set exrc
