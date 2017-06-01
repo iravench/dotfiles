@@ -3,6 +3,8 @@ let g:rspec_command = "!rspec --no-drb --color --format documentation {spec}"
 "nnoremap <leader>s :call RunCurrentSpecFile()<CR>
 nnoremap <leader>ts :call RunNearestSpec()<CR>
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
 
 " respect local .vimrc config
 " set exrc
