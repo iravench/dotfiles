@@ -6,6 +6,10 @@ nnoremap <leader>ts :call RunNearestSpec()<CR>
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
+" make ~ execute the contents of the a register
+nnoremap ~ @a
+vnoremap ~ :normal @a<CR>
+
 " respect local .vimrc config
 " set exrc
 
