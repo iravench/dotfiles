@@ -57,8 +57,6 @@ plugins=(brew fasd)
 
 # rvm
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # online help
 unalias run-help
@@ -70,6 +68,13 @@ source $ZSH/oh-my-zsh.sh
 
 # tmuinator
 source ~/.bin/tmuxinator.zsh
+
+# thefuck
+eval $(thefuck --alias)
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -95,3 +100,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
