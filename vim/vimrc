@@ -178,6 +178,12 @@ augroup utils
   autocmd VimResized * :wincmd =
 augroup END
 
+" fugitive
+augroup fugitive
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
+
 function! s:MkNonExDir(file, buf)
   if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
     let dir=fnamemodify(a:file, ':h')
