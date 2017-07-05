@@ -103,7 +103,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <leader>l :Align
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>a :Ag!<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
@@ -176,6 +176,12 @@ augroup END
 augroup utils
   autocmd!
   autocmd VimResized * :wincmd =
+augroup END
+
+" fugitive
+augroup fugitive
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
 function! s:MkNonExDir(file, buf)
