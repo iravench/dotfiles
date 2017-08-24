@@ -1,0 +1,20 @@
+# cbt
+alias cbt_lc='NODE_PORT=4000 npm start'
+alias cbt_lcm='MOCK=1 grunt db:init && MOCK=1 NODE_PORT=4000 npm start'
+alias cbt_te='TZ=utc NODE_ENV=test'
+alias cbt_tec='cbt_te MOCK_UAPI_PORT=23050 MOCK_IDENTITY_PORT=23080 SYSTEM=APP SELENIUM_WINDOW_SIZE=2560x1440 SELENIUM_PORT=4444'
+alias cbt_m='cbt_te grunt db:init && cbt_te mocha'
+alias cbt_m2='cbt_te mocha'
+alias cbt_mc='cbt_tec grunt db:init && cbt_tec mocha'
+alias cbt_mc2='cbt_tec mocha'
+alias cbt_np='export PATH="$PATH:./node_modules/.bin"'
+alias cbt_cs='java -jar -Dwebdriver.gecko.driver=/Users/rchen/Downloads/geckodriver /Users/rchen/Downloads/selenium-server-standalone-3.4.0.jar'
+alias cbt_prod_db='ssh cbt-jump "ssh cbt-production-app1 \"./cbt_dump_db\" " | gunzip | psql -U postgres cbt_production'
+alias cbt_reset='npm install && grunt && grunt db:init'
+
+# tmp
+alias tmp_db='SKIP_MIGRATE=1 script/db --user=root travel_management_platform_development'
+alias tmp_reset='bundle install && bundle exec rake db:drop db:create db:reset'
+alias tmp_spec='bundle exec rspec -cfd'
+alias tmp_serv='bundle exec rails server'
+alias tmp_conl='bundle exec rails console'
