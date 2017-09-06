@@ -1,5 +1,5 @@
 " rspec command shortcut
-let g:rspec_command = "!rspec --no-drb --color --format documentation {spec}"
+let g:rspec_command = "!COV=NO rspec --no-drb --color --format documentation {spec}"
 "nnoremap <leader>s :call RunCurrentSpecFile()<CR>
 nnoremap <leader>ts :call RunNearestSpec()<CR>
 
