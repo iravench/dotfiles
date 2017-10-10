@@ -45,11 +45,16 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# nvm
+# this has to happen before loading the auto_nvmrc plugin
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew fasd locomote git-me)
+plugins=(brew fasd locomote auto_nvmrc git-me)
 
 # User configuration
 
@@ -71,10 +76,6 @@ source ~/.bin/tmuxinator.zsh
 
 # thefuck
 eval $(thefuck --alias)
-
-# nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
