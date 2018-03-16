@@ -8,9 +8,8 @@ syntax enable
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
-" install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -18,6 +17,8 @@ endif
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
+
+call vundle#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -107,9 +108,7 @@ nnoremap <leader>a :Ag!<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPTag<CR>
-nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>:nohlsearch<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
@@ -132,7 +131,7 @@ noremap <silent> <leader>r :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
-let g:ctrlp_match_window = 'order:ttb,max:20'
+let g:ctrlp_match_window = 'order:ttb,max:30'
 let g:ctrlp_working_path_mode = 0
 let g:NERDSpaceDelims = 1
 let g:gitgutter_enabled = 1
@@ -140,13 +139,16 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_pug_checkers = ['pug_lint']
 let g:jsx_ext_required = 0
 
+" set ctags binary for tagbar
+let g:Tlist_Ctags_Cmd=system('print $(brew --prefix ctags-exuberant)"/bin/ctags"')
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
-  " Use Ag over Grep
+  " Use Ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s --files-with-matches --nocolor -g ""'
 endif
 
 " init ctrlp buffer delete plugin

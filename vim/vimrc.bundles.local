@@ -1,2 +1,2 @@
-Bundle 'eventualbuddha/vim-protobuf'
-Bundle 'tomasr/molokai'
+Plugin 'eventualbuddha/vim-protobuf'
+Plugin 'tomasr/molokai'
