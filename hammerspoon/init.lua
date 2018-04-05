@@ -28,7 +28,6 @@ knownkeys = {
   {'e', 'mail'},
   {'f', 'finder'},
   {'g', 'github'},
-  {'o', 'omnifocus'},
   {'p', 'preview'},
   {'r', 'sublimetext'},
   {'t', 'textmate'},
