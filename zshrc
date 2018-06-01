@@ -110,3 +110,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add gettext to PATH
 export PATH="${PATH}:/usr/local/opt/gettext/bin"
+
+# Add user bin path
+export PATH="${PATH}:$HOME/bin"

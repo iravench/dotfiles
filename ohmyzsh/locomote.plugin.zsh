@@ -20,7 +20,7 @@ alias cbt_prod_db='ssh cbt-jump "ssh cbt-production-app1 \"./cbt_dump_db\" " | g
 
 # tmp
 alias tmp_db='SKIP_MIGRATE=1 script/db --user=root travel_management_platform_development'
-alias tmp_reset='bundle install && bundle exec rake db:drop db:create db:reset'
+alias tmp_reset='bundle install && bundle exec rake db:drop db:create db:reset && yarn'
 alias tmp_spec='COV=NO bundle exec rspec -cfd'
 alias tmp_serv='bundle exec rails server -b 127.0.0.1'
 alias tmp_conl='bundle exec rails console'
