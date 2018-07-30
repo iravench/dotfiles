@@ -47,6 +47,7 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'sjl/gundo.vim'
 Plugin 'benmills/vimux'
 Plugin 'digitaltoad/vim-pug.git'
+Plugin 'slim-template/vim-slim.git'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " experimentation
