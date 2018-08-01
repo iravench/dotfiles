@@ -4,7 +4,7 @@
 "
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-repeat' " allow . command to repeat plugin operation
+Plugin 'tpope/vim-repeat' " allow . command to repeat plugin operations
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'ctrlpvim/ctrlp.vim'
