@@ -28,5 +28,5 @@ alias tmp_serv='bundle exec rails server -b 127.0.0.1'
 alias tmp_conl='bundle exec rails console'
 
 # brew and cask
-alias bcuo='brew cask outdated --greedy | awk -F"\s" "{print $1}" | xargs brew cask upgrade && brew cask cleanup'
+alias bcuo='brew cask outdated --greedy | awk -F"\s" "{print $1}" | xargs brew cask upgrade && brew cleanup'
 alias bubu='bubo && bubc && bcuo'
