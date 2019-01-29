@@ -46,9 +46,10 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # nvm
-# this has to happen before loading the auto_nvmrc plugin
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# this happens before loading auto_nvmrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -113,3 +114,6 @@ export PATH="${PATH}:/usr/local/opt/gettext/bin"
 
 # Add user bin path
 export PATH="${PATH}:$HOME/bin"
+
+# gpg
+export GPG_TTY=$(tty)
