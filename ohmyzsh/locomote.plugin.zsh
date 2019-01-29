@@ -1,8 +1,6 @@
 # cbt
 alias cbt_path='export PATH="./node_modules/.bin:$PATH"'
-alias cbt_modules='rm -rf ./node_modules && npm install'
-alias cbt_reset='npm install && grunt && grunt db:init'
-alias cbt_rebuild='cbt_modules && grunt && grunt db:init'
+alias cbt_reset='npm ci && grunt && grunt db:init'
 
 alias cbt_lc='TZ=utc NODE_PORT=4000'
 alias cbt_serv='cbt_lc npm start'
