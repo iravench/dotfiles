@@ -54,7 +54,7 @@ source $(brew --prefix nvm)/nvm.sh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew fasd locomote auto_nvmrc git-me)
+plugins=(brew fasd auto_nvmrc git-me)
 
 # User configuration
 
@@ -70,9 +70,6 @@ HELPDIR=/usr/local/share/zsh/help
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# tmuinator
-source ~/.bin/tmuxinator.zsh
 
 # thefuck
 eval $(thefuck --alias)
