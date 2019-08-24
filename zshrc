@@ -55,7 +55,7 @@ export NVM_DIR="$HOME/.nvm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew fasd locomote auto_nvmrc git-me)
+plugins=(brew fasd locomote auto_nvmrc)
 
 # User configuration
 
@@ -71,9 +71,6 @@ HELPDIR=/usr/local/share/zsh/help
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# tmuinator
-source ~/.bin/tmuxinator.zsh
 
 # thefuck
 eval $(thefuck --alias)
@@ -113,7 +110,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="${PATH}:/usr/local/opt/gettext/bin"
 
 # Add user bin path
-export PATH="${PATH}:$HOME/bin"
+export PATH="${PATH}:/usr/local/sbin:$HOME/bin"
 
 # gpg
 export GPG_TTY=$(tty)

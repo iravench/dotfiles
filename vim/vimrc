@@ -110,6 +110,7 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>:nohlsearch<CR>
+noremap! <Leader><tab> <esc>gg=G<C-o><C-o>zz
 nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>sv :vsplit<CR>
