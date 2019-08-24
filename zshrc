@@ -55,7 +55,7 @@ export NVM_DIR="$HOME/.nvm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew fasd locomote auto_nvmrc)
+plugins=(brew fasd auto_nvmrc git-me)
 
 # User configuration
 
