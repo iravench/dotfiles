@@ -54,3 +54,4 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
