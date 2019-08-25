@@ -137,6 +137,8 @@ let g:ctrlp_working_path_mode = 0
 let g:NERDSpaceDelims = 1
 let g:gitgutter_enabled = 1
 let g:ale_echo_msg_format = '[%linter%] %s'
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " set ctags binary for tagbar
 let g:Tlist_Ctags_Cmd=system('print $(brew --prefix ctags-exuberant)"/bin/ctags"')
@@ -193,6 +195,12 @@ augroup END
 augroup fugitive
   autocmd!
   autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
+
+" typescript
+augroup typescript
+  autocmd!
+  autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
 augroup END
 
 function! s:MkNonExDir(file, buf)
